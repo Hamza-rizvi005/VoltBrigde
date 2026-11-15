@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Bridge — Logo Design Options</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body {
+      background-color: #0b1411;
+      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .glow-gold { filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.35)); }
+    .glow-green { filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.35)); }
+    .glow-cyan { filter: drop-shadow(0 0 12px rgba(6, 182, 212, 0.35)); }
+  </style>
+</head>
+<body class="p-6 max-w-5xl mx-auto space-y-8">
+
+  <!-- Header -->
+  <div class="border-b border-emerald-900/40 pb-5">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
+      BRAND IDENTITY EXPLORATION
+    </div>
+    <h1 class="text-3xl font-bold tracking-tight text-white">Volt Bridge — Logo Design Options</h1>
+    <p class="text-sm text-gray-400 mt-1 max-w-2xl">
+      Three purpose-built vector identity concepts combining rooftop solar, battery reserves, and blackout protection. Click any option below to preview how it looks live in the application header.
+    </p>
+  </div>
+
+  <!-- Live Simulated Header Playground -->
+  <div class="bg-gray-900/80 rounded-2xl border border-gray-800 p-5 shadow-2xl backdrop-blur">
+    <div class="flex items-center justify-between text-xs text-gray-400 mb-3 font-medium">
+      <span>SIMULATED NAVBAR PREVIEW</span>
+      <span id="active-label" class="text-emerald-400 font-semibold">Active: Option 1 (The Solar Arch)</span>
+    </div>
+    <div class="bg-[#0f1f1a] border border-emerald-950 rounded-xl px-5 py-3.5 flex items-center justify-between shadow-inner">
+      <div id="nav-logo-container" class="flex items-center gap-3">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="hidden sm:flex items-center gap-6 text-xs text-gray-300">
+        <span class="text-emerald-400 font-medium">Dashboard</span>
+        <span>Daily planner</span>
+        <span>Power cuts</span>
+        <span>Events</span>
+        <span>Assistant</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-1 text-[11px] rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Demo data</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 Options Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Option 1: The Solar Arch -->
+    <div id="card-1" onclick="selectOption(1)" class="cursor-pointer group relative bg-gray-900/60 rounded-2xl border-2 border-emerald-500/60 p-6 transition-all duration-300 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-950/40">
+      <div class="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+        Option 1
+      </div>
+      
+      <!-- Mark Preview Large -->
+      <div class="h-32 flex items-center justify-center">
+        <div class="size-20 rounded-2xl bg-[#091511] border border-emerald-800/40 flex items-center justify-center glow-gold group-hover:scale-105 transition-transform">
+          <svg viewBox="0 0 64 64" fill="none" class="w-14 h-14">
+            <defs>
+              <linearGradient id="sun-glow-1" x1="16" y1="8" x2="48" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FDE047" />
+                <stop offset="1" stop-color="#F59E0B" />
+              </linearGradient>
+              <linearGradient id="arch-grad-1" x1="8" y1="36" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#34D399" />
+                <stop offset="0.5" stop-color="#10B981" />
+                <stop offset="1" stop-color="#059669" />
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="24" r="13" fill="url(#sun-glow-1)" fill-opacity="0.18" />
+            <circle cx="32" cy="24" r="8" fill="url(#sun-glow-1)" />
+            <path d="M32 7v4M19 12l2.5 2.5M45 12l-2.5 2.5M12 24h4M52 24h-4" stroke="#FDE047" stroke-width="2.2" stroke-linecap="round" opacity="0.9" />
+            <path d="M8 50 C18 30, 46 30, 56 50" stroke="url(#arch-grad-1)" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M19 42v8M25 36v14M32 34v16M39 36v14M45 42v8" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 2" opacity="0.8" />
+            <path d="M6 52h52" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" opacity="0.4" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">The Solar Arch</h3>
+        <p class="text-xs text-emerald-400 font-medium mt-0.5">Sun + Suspension Bridge</p>
+        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+          Literally depicts the bridge between daytime solar production and nighttime/power-cut coverage. Warm golden sun rays anchored by a strong green suspension arch.
+        </p>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-gray-800 text-[11px] text-gray-400 space-y-1">
+        <div><strong>Key Feeling:</strong> Friendly, warm, intuitive.</div>
+        <div><strong>Target Audience:</strong> Families & general homeowners.</div>
+      </div>
+      
+      <button class="mt-4 w-full py-2 text-xs font-semibold rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-colors">
+        Preview in Header
+      </button>
+    </div>
+
+    <!-- Option 2: The Resilient Hex-Shield -->
+    <div id="card-2" onclick="selectOption(2)" class="cursor-pointer group relative bg-gray-900/60 rounded-2xl border-2 border-gray-800 p-6 transition-all duration-300 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-950/40">
+      <div class="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded bg-gray-800 text-gray-300 border border-gray-700">
+        Option 2
+      </div>
+
+      <!-- Mark Preview Large -->
+      <div class="h-32 flex items-center justify-center">
+        <div class="size-20 rounded-2xl bg-[#091511] border border-emerald-800/40 flex items-center justify-center glow-green group-hover:scale-105 transition-transform">
+          <svg viewBox="0 0 64 64" fill="none" class="w-14 h-14">
+            <defs>
+              <linearGradient id="shield-stroke-2" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#34D399" />
+                <stop offset="0.6" stop-color="#059669" />
+                <stop offset="1" stop-color="#047857" />
+              </linearGradient>
+              <linearGradient id="bolt-grad-2" x1="22" y1="16" x2="42" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FDE047" />
+                <stop offset="1" stop-color="#F59E0B" />
+              </linearGradient>
+            </defs>
+            <polygon points="32,6 54,18 54,46 32,58 10,46 10,18" fill="#061A14" stroke="url(#shield-stroke-2)" stroke-width="2.8" stroke-linejoin="round" />
+            <polygon points="32,8 51,19 32,29 13,19" fill="#FBBF24" fill-opacity="0.1" stroke="#FBBF24" stroke-width="1.2" stroke-opacity="0.4" />
+            <path d="M22 14l10 5.5M42 14l-10 5.5" stroke="#FBBF24" stroke-width="1" stroke-opacity="0.4" stroke-linecap="round" />
+            <path d="M17 43l15 8 15-8" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.6" />
+            <path d="M22 47l10 5.5 10-5.5" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.9" />
+            <path d="M35 15 L23 31 H32 L29 47 L43 27 H33 Z" fill="url(#bolt-grad-2)" stroke="#061A14" stroke-width="1.2" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">The Hex-Shield</h3>
+        <p class="text-xs text-amber-400 font-medium mt-0.5">Solar Cells + Battery Fortress</p>
+        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+          Isometric hexagonal cell representing an energy store and home protection. Upper facet represents solar panels; lower base represents protected battery reserve tiers.
+        </p>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-gray-800 text-[11px] text-gray-400 space-y-1">
+        <div><strong>Key Feeling:</strong> Robust, protective, engineered.</div>
+        <div><strong>Target Audience:</strong> Tech competitions & IoT demos.</div>
+      </div>
+
+      <button class="mt-4 w-full py-2 text-xs font-semibold rounded-lg bg-gray-800 text-gray-300 border border-gray-700 hover:bg-emerald-500/20 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors">
+        Preview in Header
+      </button>
+    </div>
+
+    <!-- Option 3: The Infinite V-Bridge -->
+    <div id="card-3" onclick="selectOption(3)" class="cursor-pointer group relative bg-gray-900/60 rounded-2xl border-2 border-gray-800 p-6 transition-all duration-300 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-950/40">
+      <div class="absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded bg-gray-800 text-gray-300 border border-gray-700">
+        Option 3
+      </div>
+
+      <!-- Mark Preview Large -->
+      <div class="h-32 flex items-center justify-center">
+        <div class="size-20 rounded-2xl bg-[#091511] border border-emerald-800/40 flex items-center justify-center glow-cyan group-hover:scale-105 transition-transform">
+          <svg viewBox="0 0 64 64" fill="none" class="w-14 h-14">
+            <defs>
+              <linearGradient id="v-flow-3" x1="8" y1="12" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FBBF24" />
+                <stop offset="0.4" stop-color="#10B981" />
+                <stop offset="0.8" stop-color="#06B6D4" />
+              </linearGradient>
+            </defs>
+            <path d="M12 14 L28 48 C30 52 34 52 36 48 L48 26 C52 18 46 12 38 14 C28 16 26 30 38 32 C44 33 52 30 54 24" 
+                  stroke="url(#v-flow-3)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="12" cy="14" r="3.5" fill="#FBBF24" />
+            <circle cx="38" cy="32" r="2.5" fill="#10B981" />
+            <circle cx="54" cy="24" r="3" fill="#06B6D4" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">The Infinite V-Bridge</h3>
+        <p class="text-xs text-cyan-400 font-medium mt-0.5">Typographic V + Flow Loop</p>
+        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+          Modern clean-tech monogram where a sharp 'V' (Volt) connects into an arching suspension curve forming an infinite continuous energy cycle.
+        </p>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-gray-800 text-[11px] text-gray-400 space-y-1">
+        <div><strong>Key Feeling:</strong> Sleek, minimalist, digital SaaS.</div>
+        <div><strong>Target Audience:</strong> Product designers & modern app users.</div>
+      </div>
+
+      <button class="mt-4 w-full py-2 text-xs font-semibold rounded-lg bg-gray-800 text-gray-300 border border-gray-700 hover:bg-emerald-500/20 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors">
+        Preview in Header
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Detailed Architecture & Recommendations -->
+  <div class="bg-gray-900/40 rounded-2xl border border-gray-800 p-6 space-y-4">
+    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">How to Choose:</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-300">
+      <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+        <span class="font-bold text-emerald-400">Select Option 1</span> if you want the strongest metaphor for the project pitch ("We bridge the solar day to the night blackout").
+      </div>
+      <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+        <span class="font-bold text-amber-400">Select Option 2</span> if you want to emphasize battery protection, engineering robustness, and hardware-in-the-loop safety.
+      </div>
+      <div class="p-3.5 rounded-xl bg-gray-900/60 border border-gray-800">
+        <span class="font-bold text-cyan-400">Select Option 3</span> if you want a trendy, minimalist tech startup brand (like Linear or Tesla Energy).
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const logos = {
+      1: {
+        name: 'Option 1: The Solar Arch',
+        svg: `<svg viewBox="0 0 64 64" fill="none" class="size-7">
+          <circle cx="32" cy="24" r="8" fill="#F59E0B" />
+          <path d="M32 7v4M19 12l2.5 2.5M45 12l-2.5 2.5M12 24h4M52 24h-4" stroke="#FDE047" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M8 50 C18 30, 46 30, 56 50" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M19 42v8M25 36v14M32 34v16M39 36v14M45 42v8" stroke="#10B981" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 2" opacity="0.8" />
+        </svg>`
+      },
+      2: {
+        name: 'Option 2: The Hex-Shield',
+        svg: `<svg viewBox="0 0 64 64" fill="none" class="size-7">
+          <polygon points="32,6 54,18 54,46 32,58 10,46 10,18" fill="#061A14" stroke="#10B981" stroke-width="2.8" stroke-linejoin="round" />
+          <polygon points="32,8 51,19 32,29 13,19" fill="#FBBF24" fill-opacity="0.1" stroke="#FBBF24" stroke-width="1.2" stroke-opacity="0.4" />
+          <path d="M22 47l10 5.5 10-5.5" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.9" />
+          <path d="M35 15 L23 31 H32 L29 47 L43 27 H33 Z" fill="#F59E0B" stroke="#061A14" stroke-width="1.2" stroke-linejoin="round" />
+        </svg>`
+      },
+      3: {
+        name: 'Option 3: The Infinite V-Bridge',
+        svg: `<svg viewBox="0 0 64 64" fill="none" class="size-7">
+          <path d="M12 14 L28 48 C30 52 34 52 36 48 L48 26 C52 18 46 12 38 14 C28 16 26 30 38 32 C44 33 52 30 54 24" 
+                stroke="#10B981" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="12" cy="14" r="3.5" fill="#FBBF24" />
+          <circle cx="54" cy="24" r="3" fill="#06B6D4" />
+        </svg>`
+      }
+    };
+
+    function renderNav(opt) {
+      const container = document.getElementById('nav-logo-container');
+      const item = logos[opt];
+      container.innerHTML = `
+        <span class="grid size-9 place-items-center rounded-xl border border-emerald-500/30 bg-[#061510] text-emerald-400 shadow-sm">
+          ${item.svg}
+        </span>
+        <span class="tracking-tight text-lg font-bold text-white font-sans">Volt<span class="font-light text-gray-400">Bridge</span></span>
+      `;
+      document.getElementById('active-label').textContent = `Active: ${item.name}`;
+
+      [1, 2, 3].forEach(i => {
+        const card = document.getElementById(`card-${i}`);
+        if (i === opt) {
+          card.classList.add('border-emerald-500/60');
+          card.classList.remove('border-gray-800');
+        } else {
+          card.classList.remove('border-emerald-500/60');
+          card.classList.add('border-gray-800');
+        }
+      });
+    }
+
+    function selectOption(opt) {
+      renderNav(opt);
+    }
+
+    // Default select option 1
+    renderNav(1);
+  </script>
+</body>
+</html>

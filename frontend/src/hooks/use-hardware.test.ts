@@ -1,0 +1,36 @@
+import { act, cleanup, renderHook } from '@testing-library/react';
+import { afterEach, expect, it, vi } from 'vitest';
+import { useHardware } from './use-hardware';
+import { api } from '@/lib/api';
+import { initialSimulation } from '@/lib/hardware';
+vi.mock('@/lib/api', () => ({ api: vi.fn() }));
+const request = vi.mocked(api);
+const mode = 'PROTOTYPE_5V_DC';
+const connection = { mode, ip: '192.168.1.50', token: 'test_device_token_123' } as const;
+const device = { ...initialSimulation(mode), device_id: 'VB-test', soc_method: 'voltage_estimate' };
+afterEach(() => { cleanup(); vi.useRealTimers(); vi.resetAllMocks(); });
+it('uses separate simulation on disconnect and never replays simulated control on reconnect', async () => {
+  vi.useFakeTimers();
+  const { result } = renderHook(() => useHardware(mode));
+  request.mockResolvedValueOnce(device);
+  await act(async () => result.current.connect(connection));
+  expect(result.current.live).toBe(true);
+  request.mockRejectedValueOnce(new Error('Device disconnected'));
+  await act(async () => vi.advanceTimersByTimeAsync(1100));
+  expect(result.current.live).toBe(false); expect(result.current.unknown).toBe(true);
+  await act(async () => result.current.control({ relay: true, cutoff_pct: 20, timer_minutes: 0, request_id: 'a3d14f01-ffdf-4660-afce-55e4092df3aa' }));
+  expect(result.current.status.relay_on).toBe(true);
+  request.mockResolvedValueOnce(device);
+  await act(async () => result.current.connect(connection));
+  expect(result.current.status.relay_on).toBe(false);
+  expect(request.mock.calls.every(call => call[0] === '/hardware/status')).toBe(true);
+});
+it('labels an unacknowledged command unknown rather than reporting hardware OFF', async () => {
+  const { result } = renderHook(() => useHardware(mode));
+  request.mockResolvedValueOnce(device);
+  await act(async () => result.current.connect(connection));
+  request.mockRejectedValueOnce(new Error('Request timed out'));
+  await act(async () => result.current.control({ relay: true, cutoff_pct: 20, timer_minutes: 1, request_id: 'a3d14f01-ffdf-4660-afce-55e4092df3aa' }));
+  expect(result.current.unknown).toBe(true); expect(result.current.live).toBe(false);
+  expect(result.current.notice).toContain('unknown');
+});
